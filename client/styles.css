@@ -1,0 +1,70 @@
+body {
+    background: #35dc9b;
+    background: linear-gradient(to bottom, #35dc9b, #3857af);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+ #complimentButton, #fortuneButton, #friendButton{
+    display: flex;
+    flex-direction: row;
+    transition: all 0.2s ease-in-out;
+      font: 18px Helvetica, Arial, sans-serif;
+      border: none;
+      margin: 2px;
+      background: #1aaf75;
+      color: #fff;
+      padding: 16px 40px;
+  }
+  
+  h1 {
+    /* margin: 0 auto 0px; */
+    color: #fff;
+    font: 20px Helvetica;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  
+  form {
+    
+      position: relative;
+      display: block;
+    }
+      
+      input {
+        font: 18px Helvetica, Arial, sans-serif;
+        box-sizing: border-box;
+        display: block;
+        border: none;
+        padding: 20px;
+        width: 300px;
+        margin-bottom: 2px;
+        font-size: 18px;
+        outline: none;
+        transition: all 0.2s ease-in-out;
+      }
+
+        
+      
+      
+      span {
+        color: #35dc9b;
+        font: 13px Helvetica, Arial, sans-serif;
+        position: absolute;
+        top: 0px;
+        left: 20px;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+      }
+    
+    input[type="submit"] {
+      transition: all 0.2s ease-in-out;
+      font: 18px Helvetica, Arial, sans-serif;
+      border: none;
+      background: #1aaf75;
+      color: #fff;
+      padding: 16px 40px;
+    }
