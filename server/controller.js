@@ -1,3 +1,35 @@
+const fortunes = [
+    {
+        text: 'Sift through your past to get a better idea of the present.',
+        id: 1
+    },
+    {
+        text: 'Stop searching forever, happiness is just next to you.',
+        id: 2
+    },
+    {
+        text: 'The first man gets the oyster, the second man gets the shell.',
+        id: 3
+    },
+    {
+        text: 'Tonight you will be blinded by passion.',
+        id: 4
+    },
+    {
+        text: 'You are almost there.',
+        id: 5
+    },
+    {
+        text: 'You are almost there.',
+        id: 6
+    },
+    {
+        text: 'Benny is a really good friend',
+        id: 7
+    }
+    
+]
+
 module.exports = {
 
     getCompliment: (req, res) => {
@@ -10,16 +42,9 @@ module.exports = {
         res.status(200).send(randomCompliment);
     },
     getFortune: (req, res) => {
-        const fortunes = [
-            'Sift through your past to get a better idea of the present.',
-            'Stop searching forever, happiness is just next to you.',
-            'The first man gets the oyster, the second man gets the shell.',
-            'Tonight you will be blinded by passion.',
-            'You are almost there.',
-            'Benny is a really good friend'
-        ]
+       
         let randIndex = Math.floor(Math.random() * fortunes.length);
-        let randFortune = fortunes[randIndex];
+        let randFortune = fortunes[randIndex].text;
         res.status(200).send(randFortune);
     },
     addCompliment: (req, res) => {
@@ -29,20 +54,22 @@ module.exports = {
         res.status(200).send(console.log(newComp))
         
     },
-    addFortune: (req, res) => {
-        let {addFortune} = req.body
-        let newFortune = addFortune
+     addFortune: (req, res) => {
+        let {fortune} = req.body
+        fortunes.push(fortune)
+        res.status(200).send('Fortune Added')
         
-        res.status(200).send(console.log(newFortune))
     },
     deleteFortune: (req, res) => {
-        let index = fortunes.findIndex(el => el.id === +req.params.id)
+        let {index} = req.params
         fortunes.splice(index, 1)
-        res.status(200).send(fortunes)
+        res.status(200).send('Fortune Deleted!')
     },
     updateFortune: (req, res) => {
-        let {id} = req.params
-        let index = fortunes.findIndex(fortune => +fortune.id === +id)
+        let {index} = req.params
+        let {fortune} = req.body
+        fortunes.splice(index,1,fortune)
+        res.status(200).send('Fortune has been updated')
 
     },
     suggestNewFriend: (req, res) => {
