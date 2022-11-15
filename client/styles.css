@@ -8,7 +8,7 @@ body {
     justify-content: center;
     height: 100vh;
   }
- #complimentButton, #fortuneButton, #friendButton, #new-fortune-btn{
+ #complimentButton, #fortuneButton, #update-fortune-button, #delete-fortune-button, #new-fortune-btn{
     display: flex;
     flex-direction: row;
     transition: all 0.2s ease-in-out;
